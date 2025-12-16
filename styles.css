@@ -13,7 +13,8 @@ body {
 }
 
 section {
-  scroll-margin-top: 73px; /*to prevent fixed navbars from covering content*/
+  scroll-margin-top: 75px; /*to prevent fixed navbars from covering content*/
+
 }
 
 /* navbar start */
@@ -34,7 +35,7 @@ section {
 }
 
 .nav-link:hover,
-.active {
+.nav-link.active {
   color: var(--pink) !important;
 }
 
@@ -84,7 +85,7 @@ section {
 
 .text {
   color: var(--peach);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -133,7 +134,7 @@ section {
   background-color: var(--purple);
 }
 
-.about .row h4 {
+.about .row h3 {
   color: var(--peach);
   text-align: center;
 }
@@ -147,6 +148,7 @@ section {
 }
 
 .aboutme-text {
+  font-size: 1.1rem;
   color: var(--peach);
   text-align: justify;
 }
@@ -157,26 +159,37 @@ section {
 }
 
 .about-btn {
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 500;
   background-color: var(--peach);
+
+}
+
+.about-btn a {
   color: var(--violet);
+  text-decoration: none;
+
 }
 
 .about-btn:hover {
   background-color: var(--peach);
+}
+.about-btn a:hover {
   color: var(--pink);
 }
 
 .about-btn:active {
   border-color: var(--peach) !important;
+  
+}
+.about-btn a:active {
   color: var(--peach) !important;
 }
 /* about section end */
 
 
 /* skills sections start*/
-.skills h4 {
+.skills h3 {
   color: var(--peach);
   text-align: center;
   
@@ -194,6 +207,7 @@ section {
 }
 
 .skill-main .info p{
+  font-size: 19px;
   color: var(--peach);
 }
 
@@ -309,7 +323,7 @@ section {
   background-color: var(--purple);
 }
 
-.projects .row h4{
+.projects .row h3{
   color: var(--peach);
   margin-top: 30px;
   text-align: center;
@@ -333,11 +347,14 @@ section {
 
 .card-body{
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 0;
   height: 100%;
   transform: translateY(100%);
   color: var(--pink);
+}
+.card-text {
+  font-size: 17.5px;
 }
 .card-body a i {
   color:#f7514e;
@@ -365,7 +382,7 @@ section {
   background-color: var(--purple);
   border-radius: 10px;
 }
-.contact .row h4 {
+.contact .row h3 {
   text-align: center;
   padding: 25px 0;
   color: var(--peach);
@@ -374,6 +391,8 @@ section {
 .contact div img {
   animation: updown 4s linear infinite;
 }
+
+
 .contact form input, .contact form textarea,.contact form button{
   display: flex;
   justify-content: space-between;
@@ -407,6 +426,24 @@ section {
   margin: auto;
 }
 
+.submit-btn  {
+  font-size: 18px;
+  background-color: var(--peach);
+  color: var(--violet);
+}
+
+.submit-btn:hover {
+  background-color: var(--peach);
+  color: var(--pink);
+}
+.submit-btn:active {
+  border-color: var(--peach) !important;
+  color: var(--peach) !important;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--peach);
+}
 /* contact section end*/
 
 
@@ -425,21 +462,6 @@ footer {
 }
 /* footer end */
 
-
-/* scroll on animation */
-.hidden {
-   opacity: 0;
-   filter: blur(6px);
-   transform: translateY(10%);
-   transition: all 1s;
-}
-
-.show {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-
-}
 
 
 /* preloader */
@@ -503,7 +525,7 @@ footer {
     transition: all 0.6s ease;
     overflow: hidden;
   }
-  .active,
+  .nav-link.active,
   .nav-link:hover,
   .nav-link:focus-visible {
     border-radius: 10px;
@@ -530,22 +552,26 @@ footer {
 
 @media screen and (min-width: 0px) and (max-width: 420px) {
   body {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .title {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   .multiple-text{
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
-  .social-media, .text {
-    font-size: 0.8rem;
+  .social-media {
+    font-size: 1.2rem;
+  }
+  
+  .text {
+    font-size: 1rem;
   }
 
   body .about-btn{
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   
   .profile {
@@ -558,17 +584,40 @@ footer {
   .hideText {
     display: none;
   }
+  .contact form input {
+    width: 200px;
+  }
+  .contact form textarea {
+    width: 250px;
+  }
+  .contact .row {
+    width: 85%;
+  }
+
+  .skill-main {
+    width: 90%;
+    margin: auto;
+  }
+
+  .progress {
+    width: 90%;
+    padding: 0;
+  }
   
 }
 
 @media screen and (min-width: 421px) and (max-width: 550px)  {
-  .text {
+  body {
     font-size: 1.1rem;
+  }
+  .text {
+    font-size: 1.15rem;
   }
 
   .social-media {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
+  
   
 }
 
@@ -582,6 +631,53 @@ footer {
     height: 125px;
     width: 115px;
   }
+
+  .contact .row {
+    width: 75%;
+  }
+
+  .contact form input {
+    width: 200px;
+  }
+  .contact form textarea {
+    width: 350px;
+  }
+
+  .contact form input {
+    width: 250px;
+  }
+  .contact form textarea {
+    width: 350px;
+  }
+  .contact .row {
+    width: 80%;
+  }
+
+  .skill-main {
+    width: 85%;
+    margin: auto;
+  }
+
+  .progress {
+    width: 85%;
+    padding: 0;
+  }
+  
+  
+  
+}
+
+
+@media screen and (min-width: 767px) and (max-width: 992px) {
+  .skill-main {
+    width: 45vw;
+    margin: auto;
+  }
+
+  .progress {
+    width: 45vw;
+    padding: 0;
+  }
   
 }
 
@@ -593,15 +689,18 @@ footer {
   .progress {
     width: 60vw;;
   }
-  .contact .row {
-    width: 80%;
-  }
-  .contact form textarea {
-    width: 250px;
-
-  }
+  
   .contact form button span {
     font-size: 15px;
+  }
+  .submit-btn  {
+    font-size: 20px;
+    background-color: var(--peach);
+    color: var(--violet);
+  }
+  
+  .contact form textarea  {
+    height: 30vh;
   }
   
 }
